@@ -6,17 +6,20 @@
 #    By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/21 17:48:36 by cprouveu          #+#    #+#              #
-#    Updated: 2017/02/16 15:12:42 by Geekette         ###   ########.fr        #
+#    Updated: 2017/02/18 10:17:48 by Geekette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME =	minishell
 
 SRCS =	minishell.c \
-		get_env.c \
+		check_if_is_builtin.c \
+		echo.c \
+		env.c  \
+		setenv.c \
+		exec.c \
 		path.c \
-		join_path_str.c \
-		check_access.c \
-		fork_execve.c \
+		get_in_env.c \
+		unsetenv.c \
 
 DEP =		minishell.h \
 			Makefile \
