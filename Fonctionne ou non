@@ -1,0 +1,47 @@
+fork et execve
+
+OK foo
+OK /bin/ls
+OK /bin/ls -laF
+OK /bin/ls -l -a -F
+
+
+builtins
+OK exit
+OK echo
+PAS OK cd /dev
+PAS OK cd
+PAS OK cd - (affiche le changement de dossier precedent)
+
+gestion de l'environnement
+OK env
+OK setenv FOO=bar
+OK unsetenv FOO
+
+gestion du PATH
+OK unsetenv PATH
+	setenv PATH=/bin:/usr/bin
+OK	ls
+PAS OK emacs
+
+OK unsetenv PATH
+PAS OK ls -> segfault
+PAS OK emacs -> segfault
+OK /bin/ls
+PAS OK /usr/bin/emacs
+
+Gestion de la ligne de commande
+OK vide
+OK espace
+OK espace + ls
+PAS OK tab + ls
+PAS OK espace ou tab entre les arguments
+
+
+leak :
+- execve
+- unsetenv
+ft_words
+ft_strsplit
+ft_strjoin
+ft_execute
