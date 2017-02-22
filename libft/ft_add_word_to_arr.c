@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_add_word_to_arr.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/17 13:26:01 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/21 17:38:57 by Geekette         ###   ########.fr       */
+/*   Created: 2017/02/21 11:11:03 by Geekette          #+#    #+#             */
+/*   Updated: 2017/02/21 11:15:29 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-int	main(int argc, char **argv, char **env)
+char		**ft_add_word_to_arr(char *str, char **arr)
 {
-	char	**env_tmp;
-	char	**argv_tmp;
-	int		argc_tmp;
+  char		**new_arr;
 
-	argv_tmp = argv;
-	argc_tmp = argc;
-	env_tmp = ft_get_env(env);
-	while (ft_read(&env_tmp) > 0);
-	ft_free_point_tab(env_tmp);
-	return (0);
+  if (arr == NULL)
+    {
+      new_arr = (char**)malloc(sizeof(char*) * 2);
+      if (new_arr == NULL)
+	return (arr);
+      new_arr[0] = str;
+      new_arr[1] = NULL;
+    }
+  else
+    return (ft_malloc_new_arr(str, arr));
+  return (new_arr);
 }

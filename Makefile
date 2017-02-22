@@ -6,20 +6,24 @@
 #    By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/21 17:48:36 by cprouveu          #+#    #+#              #
-#    Updated: 2017/02/18 10:17:48 by Geekette         ###   ########.fr        #
+#    Updated: 2017/02/22 01:02:23 by Geekette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME =	minishell
 
 SRCS =	minishell.c \
-		check_if_is_builtin.c \
-		echo.c \
-		env.c  \
-		setenv.c \
-		exec.c \
-		path.c \
-		get_in_env.c \
-		unsetenv.c \
+		ft_check_command.c \
+		ft_clean_str.c \
+		ft_do_execute.c \
+		ft_get_env.c \
+		ft_read.c \
+		ft_tab_len.c \
+		ft_command.c \
+		builtin_setenv.c \
+		builtin_unsetenv.c \
+		builtin_env.c \
+		builtin_echo.c \
+		builtin_cd.c \
 
 DEP =		minishell.h \
 			Makefile \

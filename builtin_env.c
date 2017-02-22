@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   builtin_env.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/17 13:26:01 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/21 17:38:57 by Geekette         ###   ########.fr       */
+/*   Created: 2017/02/20 21:02:23 by Geekette          #+#    #+#             */
+/*   Updated: 2017/02/22 01:37:10 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	main(int argc, char **argv, char **env)
+int	ft_print_env(char **str_clean, char **env)
 {
-	char	**env_tmp;
-	char	**argv_tmp;
-	int		argc_tmp;
+	int i;
+	char **env_tmp;
 
-	argv_tmp = argv;
-	argc_tmp = argc;
+	env_tmp = NULL;
 	env_tmp = ft_get_env(env);
-	while (ft_read(&env_tmp) > 0);
-	ft_free_point_tab(env_tmp);
-	return (0);
+	if (str_clean[1] != NULL)
+  	{
+		ft_printf("Sorry, but env didn't suppose any arguments.\n");
+  	}
+	else
+	{
+		i = 0;
+		while (env_tmp[i])
+		{
+			ft_printf("%s\n", env_tmp[i]);
+			i++;
+		}
+	}
+	return(1);
 }

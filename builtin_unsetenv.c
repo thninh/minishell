@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   builtin_unsetenv.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 11:59:47 by cprouveu          #+#    #+#             */
-/*   Updated: 2017/02/19 22:02:14 by Geekette         ###   ########.fr       */
+/*   Created: 2017/02/17 22:34:25 by Geekette          #+#    #+#             */
+/*   Updated: 2017/02/21 22:34:40 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minishell.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+char	**ft_unsetenv(char *name, char **env)
 {
-	size_t i;
-	size_t j;
+	int i;
 
 	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-	{
-		i++;
-	}
-	while (j < n && s2[j] != '\0')
-	{
-		s1[i] = s2[j];
-		j++;
-		i++;
-	}
-	s1[i] = '\0';
-	return (s1);
+	if ((i = ft_get_in_env(name, env)) >= 0)
+		env = ft_remove_from_array(i, env);
+	return (env);
 }

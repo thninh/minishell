@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_malloc_new_arr.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/17 13:26:01 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/21 17:38:57 by Geekette         ###   ########.fr       */
+/*   Created: 2017/02/21 11:12:40 by Geekette          #+#    #+#             */
+/*   Updated: 2017/02/21 11:15:33 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-int	main(int argc, char **argv, char **env)
+char		**ft_malloc_new_arr(char *str, char **arr)
 {
-	char	**env_tmp;
-	char	**argv_tmp;
-	int		argc_tmp;
+  int		i;
+  char		**new_arr;
 
-	argv_tmp = argv;
-	argc_tmp = argc;
-	env_tmp = ft_get_env(env);
-	while (ft_read(&env_tmp) > 0);
-	ft_free_point_tab(env_tmp);
-	return (0);
+  i = 0;
+  while (arr[i] != NULL)
+    i = i + 1;
+  new_arr = (char**)malloc(sizeof(char*) * (i + 2));
+  if (new_arr == NULL)
+    return (arr);
+  i = 0;
+  while (arr[i] != NULL)
+    {
+      new_arr[i] = arr[i];
+      i = i + 1;
+    }
+  free(arr);
+  new_arr[i] = str;
+  new_arr[i + 1] = NULL;
+  return (new_arr);
 }

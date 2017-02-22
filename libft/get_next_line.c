@@ -16,7 +16,7 @@ char	*my_alloc(char *buffer)
 {
   char	*ptr;
 
-  ptr = malloc((ft_strlen(buffer) + 1) * sizeof(char));
+  ptr = (char *)malloc((sizeof(char) * (ft_strlen(buffer) + 1)));
   if (ptr == NULL)
     return (NULL);
   ft_strcpy(ptr, buffer);

@@ -6,7 +6,7 @@
 /*   By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 14:49:38 by cprouveu          #+#    #+#             */
-/*   Updated: 2017/02/16 12:37:12 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/21 14:00:12 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,13 @@ void				ft_lst_push_back(t_list **begin, t_list *list);
 int					ft_lstsize(t_list *lst);
 int					ft_printf(const char *format, ...);
 void				ft_free_point_tab(char **tab);
-int					ft_tabstrsize(char **str_to_wordtab);
-
-
+int					ft_tabstrsize(char **array);
+char				**ft_add_word_to_tab(char *str, int count, char **arr);
+char				**ft_add_word_to_arr(char *str, char **arr);
+char				**ft_malloc_new_arr(char *str, char **arr);
+int					ft_find_c_in_str(char c, char *separators);
+char				**ft_split_str_multi_char(char *str, char *separators, int quotes_mode);
+char				**ft_remove_from_array(int rem, char **arr);
 
 
 #endif

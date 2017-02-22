@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_add_word_to_tab.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/17 13:26:01 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/21 17:38:57 by Geekette         ###   ########.fr       */
+/*   Created: 2017/02/21 10:55:37 by Geekette          #+#    #+#             */
+/*   Updated: 2017/02/21 11:10:14 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-int	main(int argc, char **argv, char **env)
+char		**ft_add_word_to_tab(char *str, int count, char **arr)
 {
-	char	**env_tmp;
-	char	**argv_tmp;
-	int		argc_tmp;
+  char		*elem;
 
-	argv_tmp = argv;
-	argc_tmp = argc;
-	env_tmp = ft_get_env(env);
-	while (ft_read(&env_tmp) > 0);
-	ft_free_point_tab(env_tmp);
-	return (0);
+  elem = (char *)malloc(sizeof(char) * (count + 1));
+  if (elem != NULL)
+    {
+      ft_strncpy(elem, str, count);
+      elem[count] = '\0';
+      return (ft_add_word_to_arr(elem, arr));
+    }
+  return (arr);
 }

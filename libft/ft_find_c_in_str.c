@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_find_c_in_str.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 11:59:47 by cprouveu          #+#    #+#             */
-/*   Updated: 2017/02/19 22:02:14 by Geekette         ###   ########.fr       */
+/*   Created: 2017/02/21 10:57:59 by Geekette          #+#    #+#             */
+/*   Updated: 2017/02/21 11:06:16 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+int		ft_find_c_in_str(char c, char *separators)
 {
-	size_t i;
-	size_t j;
+  int		i;
 
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-	{
-		i++;
-	}
-	while (j < n && s2[j] != '\0')
-	{
-		s1[i] = s2[j];
-		j++;
-		i++;
-	}
-	s1[i] = '\0';
-	return (s1);
+  i = 0;
+  while (c != separators[i] && separators[i] != '\0')
+    i = i + 1;
+  if (separators[i] != '\0')
+    return (1);
+  else
+    return (0);
 }

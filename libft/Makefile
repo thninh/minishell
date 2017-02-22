@@ -6,7 +6,7 @@
 #    By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 14:09:11 by cprouveu          #+#    #+#              #
-#    Updated: 2017/02/16 12:36:46 by Geekette         ###   ########.fr        #
+#    Updated: 2017/02/21 11:29:33 by Geekette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,12 @@ SRCS = 	ft_memset.c\
 		get_next_line.c \
 		ft_free_point_tab.c \
 		ft_tabstrsize.c \
+		ft_add_word_to_tab.c \
+		ft_add_word_to_arr.c \
+		ft_find_c_in_str.c \
+		ft_split_str_multi_char.c \
+		ft_malloc_new_arr.c \
+		ft_remove_from_arr.c \
 
 OBJS = $(SRCS:.c=.o)
 

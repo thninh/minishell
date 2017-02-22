@@ -22,20 +22,20 @@ gestion du PATH
 OK unsetenv PATH
 	setenv PATH=/bin:/usr/bin
 OK	ls
-PAS OK emacs
+OK emacs
 
 OK unsetenv PATH
-PAS OK ls -> segfault
-PAS OK emacs -> segfault
+OK ls
+OK emacs
 OK /bin/ls
-PAS OK /usr/bin/emacs
+OK /usr/bin/emacs
 
 Gestion de la ligne de commande
 OK vide
 OK espace
 OK espace + ls
-PAS OK tab + ls
-PAS OK espace ou tab entre les arguments
+OK tab + ls
+OK espace ou tab entre les arguments
 
 
 leak :

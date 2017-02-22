@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_tab_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 11:59:47 by cprouveu          #+#    #+#             */
-/*   Updated: 2017/02/19 22:02:14 by Geekette         ###   ########.fr       */
+/*   Created: 2017/02/19 11:41:23 by Geekette          #+#    #+#             */
+/*   Updated: 2017/02/20 22:40:47 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minishell.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+int		ft_tab_len(char **env)
 {
-	size_t i;
-	size_t j;
+	int	i;
 
+	if(env == NULL)
+		return (0);
 	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-	{
+	while (env[i] != NULL)
 		i++;
-	}
-	while (j < n && s2[j] != '\0')
-	{
-		s1[i] = s2[j];
-		j++;
-		i++;
-	}
-	s1[i] = '\0';
-	return (s1);
+	return (i);
 }
