@@ -6,13 +6,23 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/27 14:18:14 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/15 15:14:34 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/23 17:49:57 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_printf(const char *format, ...)
+void	ft_check_which_letter(const char *format, int i, va_list ap)
+{
+	if (format[i] == 's')
+		ft_putstr(va_arg(ap, char*));
+	else if (format[i] == 'd')
+		ft_putnbr(va_arg(ap, int));
+	else if (format[i] == 'c')
+		ft_putchar(va_arg(ap, int));
+}
+
+int		ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		i;
@@ -24,12 +34,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == 's')
-				ft_putstr(va_arg(ap, char*));
-			else if (format[i] == 'd')
-				ft_putnbr(va_arg(ap, int));
-			else if (format[i] == 'c')
-				ft_putchar(va_arg(ap, int));
+			ft_check_which_letter(format, i, ap);
 			i++;
 		}
 		while ((format[i] != '%') && (format[i]))

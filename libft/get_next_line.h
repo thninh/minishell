@@ -1,12 +1,15 @@
-/*
-** get_next_line.h for get nekt line h in /home/wurfl_v/rendu/PSU_2013_minishell1
-**
-** Made by a
-** Login   <wurfl_v@epitech.net>
-**
-** Started on  Sat Jan  4 14:55:43 2014 a
-** Last update Sat Jan  4 14:55:45 2014 a
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/02/23 17:34:58 by cprouveu          #+#    #+#             */
+/*   Updated: 2017/02/23 17:35:02 by cprouveu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef GET_NEXT_LINE_H
 #ifndef READ_SIZE

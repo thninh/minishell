@@ -6,13 +6,13 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 11:48:55 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/17 18:57:54 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/23 17:38:54 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_free_point_tab(char **tab)
+void	ft_free_point_tab(char **tab)
 {
 	int i;
 
