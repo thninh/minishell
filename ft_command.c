@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/19 22:15:11 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/23 15:01:57 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/23 16:25:23 by curquiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,19 @@ int ft_cmd_cd(char ***env, char **str_to_worktab)
 
 int	ft_cmd_unsetenv(char **argv, char ***env)
 {
+	char	**tmp_env;
+
   if (argv[1] != NULL)
-      *env = ft_unsetenv(argv[1], *env);
+  {
+		if (ft_get_in_env(argv[1], *env) >= 0)
+		{
+			tmp_env = *env;
+      		*env = ft_unsetenv(argv[1], tmp_env);
+	  		ft_free_point_tab(tmp_env);
+		}
+		else
+			ft_printf("%s is not in env\n");
+  }
   else
     ft_printf("unsetenv: Too few arguments.\n");
   return (1);

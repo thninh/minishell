@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 22:34:25 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/23 15:33:00 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/23 16:30:19 by curquiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	**ft_unsetenv(char *name, char **env)
 	int i;
 	int len;
 	char	**env_tmp;
-	char	**env_tmp2;
+	//char	**env_tmp2;
 	int j;
 
 	i_rm = 0;
@@ -36,9 +36,10 @@ char	**ft_unsetenv(char *name, char **env)
 	i = 0;
 	j = 0;
 	env_tmp = NULL;
-	env_tmp2 = NULL;
-	if ((i_rm = ft_get_in_env(name, env)) > 0)
-	{
+	//env_tmp2 = NULL;
+	//if ((i_rm = ft_get_in_env(name, env)) >= 0)
+	//{
+	i_rm = ft_get_in_env(name, env);
 		len = ft_tabstrsize(env);
 		env_tmp = (char **)malloc(sizeof(char *) * len);
 		while (i < len)
@@ -48,21 +49,25 @@ char	**ft_unsetenv(char *name, char **env)
 				env_tmp[j] = (char *)malloc(sizeof(char) * (ft_strlen(env[i]) + 1));
 				ft_strcpy(env_tmp[j], env[i]);
 				j++;
+				i++;
 			}
-			if (i == i_rm)
+			else if (i == i_rm)
 			{
 				// free(env[i]);
 				i++;
 			}
-			i++;
+			//i++;
 		}
 		env_tmp[j] = NULL;
 		// free(env); /*ON REPREND DEPUIS LES DEBUT*/
 		// ft_free_point_tab(env);
-	}
-	else
+	//}
+	/*else
+	{
 		ft_printf("%s is not in env\n");
-	env_tmp2 = env_tmp;
+		return (env);
+	}*/
+//	env_tmp2 = env_tmp;
 	// ft_free_point_tab(env_tmp);
-	return (env_tmp2);
+	return (env_tmp);
 }

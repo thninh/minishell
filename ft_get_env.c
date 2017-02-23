@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/19 11:37:15 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/22 02:05:33 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/23 16:02:16 by curquiza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,23 +111,31 @@ char		*ft_get_path(char *str_to_worktab1, char **env)
 int	ft_get_in_env(char *data, char **env)
 {
 	int			i;
-	char		*path;
+//	char		*path;
 	char **env_tmp;
+	char		*name;
 
 	i = 0;
-	path = NULL;
+//	path = NULL;
 	env_tmp = NULL;
 	env_tmp = env;
+	while (data[i] && data[i] != '=')
+		i++;
+	name = ft_strsub(data, 0, i);
+	i = 0;
  	while (env_tmp[i] != NULL)
 	{
-		if (my_str_is_in(env_tmp[i], data) != 0)
+		if (ft_strncmp(env_tmp[i], name, ft_strlen(name)) == 0)
+		//if (my_str_is_in(env_tmp[i], data) != 0)
 		{
-			path = my_path_dup(env_tmp[i], ft_strlen(data), ft_strlen(env_tmp[i]));
+			free(name);
+			//path = my_path_dup(env_tmp[i], ft_strlen(data), ft_strlen(env_tmp[i]));
 			return (i);
 		}
 		i++;
 	}
-	return (0);
+	free(name);
+	return (-1);
 }
 
 char	**ft_get_env(char **env)
