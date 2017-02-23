@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/21 17:47:07 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/22 02:12:22 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/23 15:02:41 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,31 @@ char	**ft_change_pwd_and_oldpwd(char **env, char *dir)
 	}
 	return (env_tmp);
 }
+
+//// 1 leak en moins mais fait bugger cd
+// char	**ft_change_pwd_and_oldpwd(char **env, char *dir)
+// {
+// 	char *old_pwd;
+// 	int	i;
+//
+// 	old_pwd = NULL;
+// 	i = 0;
+// 	if ((i = ft_get_in_env("PWD", env)) >= 0)
+// 		old_pwd = env[i] + 4;
+// 	i = 0;
+// 	if ((i = ft_get_in_env("OLDPWD", env)) >= 0)
+// 	{
+// 		env = ft_unsetenv("OLDPWD", env);
+// 		env = ft_unsetenv("PWD", env);
+// 		env = ft_setenv("PWD", dir, env);
+// 		env = ft_setenv("OLDPWD", old_pwd, env);
+// 	}
+// 	return (env);
+// }
+
+
+
+////
 
 char	**exec_cd(char **env, char *dir, int f)
 {
