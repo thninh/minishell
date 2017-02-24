@@ -6,7 +6,7 @@
 /*   By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 14:49:38 by cprouveu          #+#    #+#             */
-/*   Updated: 2017/02/21 14:00:12 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/24 10:05:31 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,5 @@ char				**ft_malloc_new_arr(char *str, char **arr);
 int					ft_find_c_in_str(char c, char *separators);
 char				**ft_split_str_multi_char(char *str, char *separators, int quotes_mode);
 char				**ft_remove_from_array(int rem, char **arr);
-
 
 #endif

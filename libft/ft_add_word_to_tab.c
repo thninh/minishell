@@ -6,15 +6,15 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/21 10:55:37 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/23 17:38:04 by cprouveu         ###   ########.fr       */
+/*   Updated: 2017/02/24 22:26:36 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		**ft_add_word_to_tab(char *str, int count, char **arr)
+char	**ft_add_word_to_tab(char *str, int count, char **arr)
 {
-	char		*elem;
+	char	*elem;
 
 	elem = (char *)malloc(sizeof(char) * (count + 1));
 	if (elem != NULL)

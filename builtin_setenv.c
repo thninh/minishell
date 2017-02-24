@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 19:11:42 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/24 00:22:18 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/24 12:20:12 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,14 @@ char	**ft_setenv_env(char *str, char **arr)
 	return (new_arr);
 }
 
+char	*ft_setenv_add_arg_together(char *record, char *name, char *value)
+{
+	ft_strcpy(record, name);
+	ft_strcat(record, "=");
+	ft_strcat(record, value);
+	return(record);
+}
+
 char	**ft_setenv(char *name, char *value, char **env)
 {
 	int		i;
@@ -64,12 +72,9 @@ char	**ft_setenv(char *name, char *value, char **env)
 	record = (char*)malloc(sizeof(char) * total_len);
 	if (record != NULL)
 	{
-		if (!(ft_strcmp(value, "") == 0))
-		{
-			ft_strcpy(record, name);
-			ft_strcat(record, "=");
-			ft_strcat(record, value);
-		}
+		if ((!(ft_strcmp(value, "") == 0) || ((ft_strcmp(value, "") == 0) &&
+			(ft_find_c_in_str('=', name)) == 0)))
+			record = ft_setenv_add_arg_together(record, name, value);
 		else
 			ft_strcpy(record, name);
 		i = ft_get_in_env(name, env);

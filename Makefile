@@ -6,7 +6,7 @@
 #    By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/21 17:48:36 by cprouveu          #+#    #+#              #
-#    Updated: 2017/02/24 00:18:31 by Geekette         ###   ########.fr        #
+#    Updated: 2017/02/24 10:04:56 by Geekette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME =	minishell
@@ -17,7 +17,6 @@ SRCS =	minishell.c \
 		ft_do_execute.c \
 		ft_get_env.c \
 		ft_read.c \
-		ft_tab_len.c \
 		ft_command.c \
 		builtin_setenv.c \
 		builtin_unsetenv.c \

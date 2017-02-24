@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 13:40:38 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/22 01:45:56 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/24 22:28:52 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,5 @@ char	**ft_setenv_env(char *str, char **arr);
 int		ft_print_env(char **str_clean, char **env);
 int		ft_child(char **str_to_worktab_split, char **env);
 char	**do_cd(char **env, char **str_to_worktab);
-
 
 #endif

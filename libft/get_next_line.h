@@ -6,10 +6,9 @@
 /*   By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 17:34:58 by cprouveu          #+#    #+#             */
-/*   Updated: 2017/02/23 17:35:02 by cprouveu         ###   ########.fr       */
+/*   Updated: 2017/02/24 22:26:20 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef GET_NEXT_LINE_H
 #ifndef READ_SIZE

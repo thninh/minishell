@@ -9,9 +9,9 @@ OK /bin/ls -l -a -F
 builtins
 OK exit
 OK echo
-PAS OK cd /dev
-PAS OK cd
-PAS OK cd - (affiche le changement de dossier precedent)
+OK cd /dev
+OK cd
+OK cd - (affiche le changement de dossier precedent)
 
 gestion de l'environnement
 OK env

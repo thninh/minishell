@@ -6,7 +6,7 @@
 #    By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 14:09:11 by cprouveu          #+#    #+#              #
-#    Updated: 2017/02/21 11:29:33 by Geekette         ###   ########.fr        #
+#    Updated: 2017/02/24 19:16:55 by Geekette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,11 +84,14 @@ SRCS = 	ft_memset.c\
 		ft_malloc_new_arr.c \
 		ft_remove_from_arr.c \
 
+DEP = 	libft.h \
+		Makefile \
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJS) $(DEP)
 		gcc -Wall -Wextra -Werror -c $(SRCS)
 		ar rc $(NAME) $(OBJS)
 

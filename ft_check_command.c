@@ -6,13 +6,13 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/19 12:04:07 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/22 02:05:04 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/24 22:28:10 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_check_cmd_to_do(char **str_clean, char ***env)
+int		ft_check_cmd_to_do(char **str_clean, char ***env)
 {
 	if (ft_strcmp(str_clean[0], "exit") == 0)
 		return (ft_cmd_exit(str_clean, *env));

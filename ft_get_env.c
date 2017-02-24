@@ -6,13 +6,11 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/19 11:37:15 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/23 16:02:16 by curquiza         ###   ########.fr       */
+/*   Updated: 2017/02/24 19:06:48 by Geekette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-
 
 char	*ft_check_path(char *str_to_worktab1, char *dir)
 {
@@ -33,108 +31,62 @@ char	*ft_check_path(char *str_to_worktab1, char *dir)
 	return (path);
 }
 
-int	my_str_is_in(char *str, char *to_find)
+char	*ft_get_path(char *str_to_worktab1, char **env)
 {
-  int	i;
-  int	a;
+	int		i;
+	char	*path;
+	char	**a_path;
+	char	*p_bin;
 
-  a = 0;
-  i = 0;
-  while (str[i] != '\0')
-    {
-      while ((str[i] == to_find[a]) && ((str[i] != '\0') || (to_find[a] != '\0')))
-        {
-          i++;
-          a++;
-        }
-      if (to_find[a] == '\0')
-        return (1);
-      a = 0;
-      i++;
-    }
-  return (0);
-}
-
-char	*my_path_dup(char *str, int i, int j)
-{
-  char	*dup;
-  int	k;
-
-  k = 0;
-  dup = (char *)malloc(sizeof(char) * (j - i + 1));
-  if (dup == NULL)
-    {
-		ft_printf("malloc failed");
-		return (0);
+	path = NULL;
+	a_path = NULL;
+	if ((i = ft_get_in_env("PATH", env)) >= 0)
+		path = env[i] + 5;
+	i = 0;
+	a_path = ft_strsplit(path, ':');
+	if (path != NULL && a_path != NULL)
+	{
+		i = 0;
+		while (a_path[i] != NULL)
+		{
+			if ((p_bin = ft_check_path(str_to_worktab1, a_path[i])) != NULL)
+			{
+				ft_free_point_tab(a_path);
+				return (p_bin);
+			}
+		i = i + 1;
+		}
 	}
-  while (str[i] != '\0')
-    {
-      dup[k] = str[i];
-      ++i;
-      ++k;
-    }
-  dup[k] = '\0';
-  return (dup);
+	return (str_to_worktab1);
 }
 
-
-
-char		*ft_get_path(char *str_to_worktab1, char **env)
+int		ft_get_in_env(char *data, char **env)
 {
-  int		i;
-  char		*path;
-  char		**a_path;
-  char		*p_bin;
-
-  path = NULL;
-  a_path = NULL;
-  if ((i = ft_get_in_env("PATH", env)) >= 0)
-    path = env[i] + 5;
-  i = 0;
-  a_path = ft_strsplit(path, ':');
-  if (path != NULL && a_path != NULL)
-      {
-	i = 0;
-	while (a_path[i] != NULL)
-	  {
-	    if ((p_bin = ft_check_path(str_to_worktab1, a_path[i])) != NULL)
-	      {
-		ft_free_point_tab(a_path);
-		return (p_bin);
-	      }
-	    i = i + 1;
-	  }
-      }
-  return (str_to_worktab1);
-}
-
-int	ft_get_in_env(char *data, char **env)
-{
-	int			i;
-//	char		*path;
-	char **env_tmp;
-	char		*name;
+	int		i;
+	char	**env_tmp;
+	char	*name;
+	char	*total_name;
 
 	i = 0;
-//	path = NULL;
 	env_tmp = NULL;
 	env_tmp = env;
 	while (data[i] && data[i] != '=')
 		i++;
 	name = ft_strsub(data, 0, i);
+	total_name = ft_strjoin(name, "=");
 	i = 0;
- 	while (env_tmp[i] != NULL)
+	while (env_tmp[i] != NULL)
 	{
-		if (ft_strncmp(env_tmp[i], name, ft_strlen(name)) == 0)
-		//if (my_str_is_in(env_tmp[i], data) != 0)
+		if (ft_strncmp(env_tmp[i], total_name, ft_strlen(total_name)) == 0)
 		{
 			free(name);
-			//path = my_path_dup(env_tmp[i], ft_strlen(data), ft_strlen(env_tmp[i]));
+			free(total_name);
 			return (i);
 		}
 		i++;
 	}
 	free(name);
+	free(total_name);
 	return (-1);
 }
 
@@ -146,7 +98,7 @@ char	**ft_get_env(char **env)
 	int		i;
 
 	tab_len = 0;
-	tab_len = ft_tab_len(env);
+	tab_len = ft_tabstrsize(env);
 	env_tmp = NULL;
 	env_tmp = (char **)malloc(sizeof(char *) * (tab_len + 1));
 	if (!env_tmp)
