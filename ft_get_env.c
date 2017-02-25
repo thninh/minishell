@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/19 11:37:15 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/24 19:06:48 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/25 10:38:33 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ char	*ft_get_path(char *str_to_worktab1, char **env)
 		i = i + 1;
 		}
 	}
+	ft_free_point_tab(a_path);
 	return (str_to_worktab1);
 }
 

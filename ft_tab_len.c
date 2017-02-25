@@ -6,13 +6,13 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/19 11:41:23 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/20 22:40:47 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/25 11:08:23 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int		ft_tab_len(char **env)
+int	ft_tab_len(char **env)
 {
 	int	i;
 

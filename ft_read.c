@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/19 11:54:21 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/24 11:41:19 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/02/25 12:33:18 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,15 @@ int	ft_read(char ***env)
 		ft_check_command(read, env);
 		ft_printf("$>");
 	}
+	// read = NULL;
+	// while (42)
+	// {
+	// 	if (get_next_line(0, &read))
+	// 	{
+	// 		ft_check_command(read, env);
+	// 		ft_printf("$>");
+	// 	}
+	// }
 	free(read);
 	if (read == 0)
 	{

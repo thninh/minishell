@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cprouveu <cprouveu@42.fr>                  +#+  +:+       +#+        */
+/*   By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:55:07 by cprouveu          #+#    #+#             */
-/*   Updated: 2016/11/06 22:29:28 by cprouveu         ###   ########.fr       */
+/*   Updated: 2017/02/25 11:11:48 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char*ft_strcat(char *s1, const char *s2)
+char	*ft_strcat(char *s1, const char *s2)
 {
 	int i;
 	int j;
