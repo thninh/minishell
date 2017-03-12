@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 22:34:25 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/24 09:17:25 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/03/11 10:52:28 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 char	**ft_unsetenv2(char **env_tmp, char **env, int i_rm, int len)
 {
-	int i = 0;
-	int j = 0;
+	int i;
+	int j;
 
+	i = 0;
+	j = 0;
 	while (i < len)
 	{
 		if (i != i_rm)

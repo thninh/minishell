@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/19 22:15:11 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/24 12:35:54 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/03/11 12:41:02 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_cmd_unsetenv(char **argv, char ***env)
 			ft_printf("%s is not in env\n", argv[1]);
 	}
 	else
-	ft_printf("unsetenv: Too few arguments.\n");
+		ft_printf("unsetenv: Too few arguments.\n");
 	return (1);
 }
 

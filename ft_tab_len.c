@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/19 11:41:23 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/25 11:08:23 by cprouveu         ###   ########.fr       */
+/*   Updated: 2017/03/11 12:41:14 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_tab_len(char **env)
 {
 	int	i;
 
-	if(env == NULL)
+	if (env == NULL)
 		return (0);
 	i = 0;
 	while (env[i] != NULL)

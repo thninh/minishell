@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/20 21:02:23 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/24 00:25:07 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/03/11 10:51:57 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_print_env(char **str_clean, char **env)
 {
-	int i;
-	char **env_tmp;
+	int		i;
+	char	**env_tmp;
 
 	env_tmp = NULL;
 	env_tmp = ft_get_env(env);
@@ -31,5 +31,5 @@ int	ft_print_env(char **str_clean, char **env)
 		}
 	}
 	ft_free_point_tab(env_tmp);
-	return(1);
+	return (1);
 }

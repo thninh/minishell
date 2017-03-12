@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/21 17:47:07 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/24 00:26:50 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/03/11 13:09:13 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	**ft_change_pwd_and_oldpwd(char **env, char *dir)
 {
-	char **env_tmp;
-	char *old_pwd;
-	int	i;
+	char	**env_tmp;
+	char	*old_pwd;
+	int		i;
 	char	**tmp;
 
 	env_tmp = NULL;
@@ -25,6 +25,8 @@ char	**ft_change_pwd_and_oldpwd(char **env, char *dir)
 	i = 0;
 	if ((i = ft_get_in_env("PWD", env_tmp)) >= 0)
 		old_pwd = env[i] + 4;
+	else
+		env_tmp = ft_setenv("PWD", dir, env_tmp);
 	i = 0;
 	if ((i = ft_get_in_env("OLDPWD", env_tmp)) >= 0)
 	{
@@ -54,7 +56,7 @@ char	**exec_cd(char **env, char *dir, int f)
 		}
 	}
 	if (f == 1)
-	free(dir);
+		free(dir);
 	return (env);
 }
 

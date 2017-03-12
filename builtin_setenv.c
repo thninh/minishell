@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 19:11:42 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/24 12:20:12 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/03/11 12:42:37 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**ft_setenv_env2(char *str, char **arr)
 
 	i = 0;
 	while (arr[i] != NULL)
-	i = i + 1;
+		i = i + 1;
 	new_arr = (char**)malloc(sizeof(char*) * (i + 2));
 	if (new_arr == NULL)
 		return (arr);
@@ -30,7 +30,7 @@ char	**ft_setenv_env2(char *str, char **arr)
 		i = i + 1;
 	}
 	if (arr != NULL)
-	free(arr);
+		free(arr);
 	new_arr[i] = str;
 	new_arr[i + 1] = NULL;
 	return (new_arr);
@@ -58,14 +58,14 @@ char	*ft_setenv_add_arg_together(char *record, char *name, char *value)
 	ft_strcpy(record, name);
 	ft_strcat(record, "=");
 	ft_strcat(record, value);
-	return(record);
+	return (record);
 }
 
 char	**ft_setenv(char *name, char *value, char **env)
 {
 	int		i;
 	int		total_len;
-	char		*record;
+	char	*record;
 
 	i = 0;
 	total_len = ft_strlen(name) + ft_strlen(value) + 2;
@@ -73,7 +73,7 @@ char	**ft_setenv(char *name, char *value, char **env)
 	if (record != NULL)
 	{
 		if ((!(ft_strcmp(value, "") == 0) || ((ft_strcmp(value, "") == 0) &&
-			(ft_find_c_in_str('=', name)) == 0)))
+			(ft_strchr(name, '=')) == 0)))
 			record = ft_setenv_add_arg_together(record, name, value);
 		else
 			ft_strcpy(record, name);
@@ -85,7 +85,7 @@ char	**ft_setenv(char *name, char *value, char **env)
 		}
 		else
 			return (ft_setenv_env(record, env));
-		}
+	}
 	ft_strdel(&record);
 	return (env);
 }

@@ -6,7 +6,7 @@
 /*   By: Geekette <Geekette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/19 12:20:10 by Geekette          #+#    #+#             */
-/*   Updated: 2017/02/24 22:28:22 by Geekette         ###   ########.fr       */
+/*   Updated: 2017/03/11 12:40:53 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 int		ft_child(char **str_to_worktab_split, char **env)
 {
 	char	*path;
-	char *check_path;
-	int i;
+	char	*check_path;
+	int		i;
 
 	i = 0;
 	path = NULL;
@@ -41,7 +41,7 @@ int		ft_pid(pid_t pid, char **str_clean, char ***env)
 		if (!ft_child(str_clean, *env))
 		{
 			ft_free_point_tab(str_clean);
-			exit (EXIT_FAILURE);
+			exit(EXIT_FAILURE);
 		}
 		exit(EXIT_FAILURE);
 	}

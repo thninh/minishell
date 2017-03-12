@@ -6,7 +6,7 @@
 #    By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 14:09:11 by cprouveu          #+#    #+#              #
-#    Updated: 2017/02/25 12:29:16 by cprouveu         ###   ########.fr        #
+#    Updated: 2017/02/25 19:19:34 by Geekette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,6 @@ SRCS = 	ft_memset.c\
 		ft_tabstrsize.c \
 		ft_add_word_to_tab.c \
 		ft_add_word_to_arr.c \
-		ft_find_c_in_str.c \
 		ft_split_str_multi_char.c \
 		ft_malloc_new_arr.c \
 		ft_remove_from_arr.c \

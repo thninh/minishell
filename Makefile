@@ -6,7 +6,7 @@
 #    By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/21 17:48:36 by cprouveu          #+#    #+#              #
-#    Updated: 2017/02/24 10:04:56 by Geekette         ###   ########.fr        #
+#    Updated: 2017/03/11 13:51:27 by cprouveu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME =	minishell
@@ -23,15 +23,17 @@ SRCS =	minishell.c \
 		builtin_env.c \
 		builtin_echo.c \
 		builtin_cd.c \
+		ft_path.c \
 
 DEP =		minishell.h \
 			Makefile \
+
 
 OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)
 
-$(NAME): $(OBJS) $(DEP)
+$(NAME): $(OBJS) $(DEP) libft/
 	make -C libft
 	gcc -Wall -Wextra -Werror $(OBJS) -o $(NAME) -L./libft -lft
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cprouveu <cprouveu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 13:42:15 by cprouveu          #+#    #+#             */
-/*   Updated: 2017/02/17 14:26:38 by Geekette         ###   ########.fr       */
+/*   Created: 2017/03/11 12:13:09 by cprouveu          #+#    #+#             */
+/*   Updated: 2017/03/11 12:14:11 by cprouveu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	int	ft_nchar(const char *s)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (s[count] && (s[count] == ' ' ||
@@ -25,8 +25,8 @@ static	int	ft_nchar(const char *s)
 
 static	int	ft_rnchar(const char *s)
 {
-	int count;
-	int count_whitespaces;
+	int	count;
+	int	count_whitespaces;
 
 	count = 0;
 	count = ft_strlen(s) - 1;
@@ -42,9 +42,9 @@ static	int	ft_rnchar(const char *s)
 
 char		*ft_strtrim(char const *s)
 {
-	int count_s;
-	int count_str;
-	char *str;
+	int		count_s;
+	int		count_str;
+	char	*str;
 
 	if (!s)
 		return (NULL);
